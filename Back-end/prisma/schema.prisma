@@ -1,0 +1,301 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = env("DATABASE_URL")
+}
+
+model Cases {
+  case    Int     @default(autoincrement()) @id
+  desc_doenca String
+  area Area_damaged? @relation(fields: [area_damaged], references: [area_damaged])
+  area_damaged String?
+  canker Canker_lesion? @relation(fields: [canker_lesion], references: [canker_lesion])
+  canker_lesion String?
+  crop Crop_hist? @relation(fields: [crop_hist], references: [crop_hist])
+  crop_hist String?
+  date_new Date? @relation(fields: [date], references: [date])
+  date String?
+  external External_decay? @relation(fields: [external_decay], references: [external_decay])
+  external_decay String?
+  fruits Fruits_spots? @relation(fields: [fruits_spots], references: [fruits_spots])
+  fruits_spots String?
+  fruiting Fruiting_bodies? @relation(fields: [fruiting_bodies], references: [fruiting_bodies])
+  fruiting_bodies String?
+  fruitpod Fruit_pods? @relation(fields: [fruit_pods], references: [fruit_pods])
+  fruit_pods String?
+  germination_new Germination? @relation(fields: [germination], references: [germination])
+  germination String?
+  hail_new Hail? @relation(fields: [hail], references: [hail])
+  hail String?
+  intdiscolor Int_discolor? @relation(fields: [int_discolor], references: [int_discolor])
+  int_discolor String?
+  leafmalf Leaf_malf? @relation(fields: [leaf_malf], references: [leaf_malf])
+  leaf_malf String?
+  leafmild Leaf_mild? @relation(fields: [leaf_mild], references: [leaf_mild])
+  leaf_mild String?
+  leafshread Leaf_shread? @relation(fields: [leaf_shread], references: [leaf_shread])
+  leaf_shread String?
+  leafspotshalo Leafspots_halo? @relation(fields: [leafspots_halo], references: [leafspots_halo])
+  leafspots_halo String?
+  leafspotssize Leafspots_size? @relation(fields: [leafspots_size], references: [leafspots_size])
+  leafspots_size String?
+  leafspotsmarg Leafspots_marg? @relation(fields: [leafspots_marg], references: [leafspots_marg])
+  leafspots_marg String?
+  leaves_new Leaves? @relation(fields: [leaves], references: [leaves])
+  leaves String?
+  lodging_new Lodging? @relation(fields: [lodging], references: [lodging])
+  lodging String?
+  mold Mold_growth? @relation(fields: [mold_growth], references: [mold_growth])
+  mold_growth String?
+  mycelium_new Mycelium? @relation(fields: [mycelium], references: [mycelium])
+  mycelium String?
+  plant Plant_growth? @relation(fields: [plant_growth], references: [plant_growth])
+  plant_growth String?
+  plantstand Plant_stand? @relation(fields: [plant_stand], references: [plant_stand])
+  plant_stand String?
+  precip_new Precip? @relation(fields: [precip], references: [precip])
+  precip String?
+  roots_new Roots? @relation(fields: [roots], references: [roots])
+  roots String?
+  sclerotia_new Sclerotia? @relation(fields: [sclerotia], references: [sclerotia])
+  sclerotia String?
+  seed_new Seed? @relation(fields: [seed], references: [seed])
+  seed String?
+  seeddiscolor Seed_discolor? @relation(fields: [seed_discolor], references: [seed_discolor])
+  seed_discolor String?
+  seedsize Seed_size? @relation(fields: [seed_size], references: [seed_size])
+  seed_size String?
+  seedtmt Seed_tmt? @relation(fields: [seed_tmt], references: [seed_tmt])
+  seed_tmt String?
+  severity_new Severity? @relation(fields: [severity], references: [severity])
+  severity String?
+  shriveling_new Shriveling? @relation(fields: [shriveling], references: [shriveling])
+  shriveling String?
+  stem_new Stem? @relation(fields: [stem], references: [stem])
+  stem String?
+  stemcankers Stem_cankers? @relation(fields: [stem_cankers], references: [stem_cankers])
+  stem_cankers String?
+  temp_new Temp? @relation(fields: [temp], references: [temp])
+  temp String?
+}
+
+model Area_damaged {
+  area_damaged String @id
+  valor Float
+  casos Cases[]
+}
+
+model Canker_lesion {
+  canker_lesion String @id
+  valor Float
+  casos Cases[]
+}
+
+model Crop_hist {
+  crop_hist String @id
+  valor Float
+  casos Cases[]
+}
+
+model Date {
+  date String @id
+  valor Float
+  casos Cases[]
+}
+
+model External_decay {
+  external_decay String @id
+  valor Float
+  casos Cases[]
+}
+
+model Fruits_spots {
+  fruits_spots String @id
+  valor Float
+  casos Cases[]
+}
+
+model Fruiting_bodies {
+  fruiting_bodies String @id
+  valor Float
+  casos Cases[]
+}
+
+model Fruit_pods {
+  fruit_pods String @id
+  valor Float
+  casos Cases[]
+}
+
+model Germination {
+  germination String @id
+  valor Float
+  casos Cases[]
+}
+
+model Hail {
+  hail String @id
+  valor Float
+  casos Cases[]
+}
+
+model Int_discolor {
+  int_discolor String @id
+  valor Float
+  casos Cases[]
+}
+
+model Leaf_malf {
+  leaf_malf String @id
+  valor Float
+  casos Cases[]
+}
+
+model Leaf_mild {
+  leaf_mild String @id
+  valor Float
+  casos Cases[]
+}
+
+model Leaf_shread {
+  leaf_shread String @id
+  valor Float
+  casos Cases[]
+}
+
+model Leafspots_halo {
+  leafspots_halo String @id
+  valor Float
+  casos Cases[]
+}
+
+model Leafspots_size {
+  leafspots_size String @id
+  valor Float
+  casos Cases[]
+}
+
+model Leafspots_marg {
+  leafspots_marg String @id
+  valor Float
+  casos Cases[]
+}
+
+model Leaves {
+  leaves String @id
+  valor Float
+  casos Cases[]
+}
+
+model Lodging {
+  lodging String @id
+  valor Float
+  casos Cases[]
+}
+
+model Mold_growth {
+  mold_growth String @id
+  valor Float
+  casos Cases[]
+}
+
+model Mycelium {
+  mycelium String @id
+  valor Float
+  casos Cases[]
+}
+
+model Plant_growth {
+  plant_growth String @id
+  valor Float
+  casos Cases[]
+}
+
+model Plant_stand {
+  plant_stand String @id
+  valor Float
+  casos Cases[]
+}
+
+model Precip {
+  precip String @id
+  valor Float
+  casos Cases[]
+}
+
+model Roots {
+  roots String @id
+  valor Float
+  casos Cases[]
+}
+
+model Sclerotia {
+  sclerotia String @id
+  valor Float
+  casos Cases[]
+}
+
+model Seed {
+  seed String @id
+  valor Float
+  casos Cases[]
+}
+
+model Seed_discolor {
+  seed_discolor String @id
+  valor Float
+  casos Cases[]
+}
+
+model Seed_size {
+  seed_size String @id
+  valor Float
+  casos Cases[]
+}
+
+model Seed_tmt {
+  seed_tmt String @id
+  valor Float
+  casos Cases[]
+}
+
+model Severity {
+  severity String @id
+  valor Float
+  casos Cases[]
+}
+
+model Shriveling {
+  shriveling String @id
+  valor Float
+  casos Cases[]
+}
+
+model Stem {
+  stem String @id
+  valor Float
+  casos Cases[]
+}
+
+model Stem_cankers {
+  stem_cankers String @id
+  valor Float
+  casos Cases[]
+}
+
+model Temp {
+  temp String @id
+  valor Float
+  casos Cases[]
+}
+
+model ColumnPeso {
+  atributo String @id
+  peso Float
+}
